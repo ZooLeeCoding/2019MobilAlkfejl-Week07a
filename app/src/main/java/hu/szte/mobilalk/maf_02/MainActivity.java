@@ -114,6 +114,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public void launchBookSearch() {
+        Intent intent = new Intent(this, BookActivity.class);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
