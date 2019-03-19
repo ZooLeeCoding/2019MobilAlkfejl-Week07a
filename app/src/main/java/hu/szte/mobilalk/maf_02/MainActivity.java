@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity
             //new SleeperTask(this.helloView).execute();
             getSupportLoaderManager().restartLoader(0, null,
                     this);
+        } else if(id == R.id.item_book) {
+            launchBookSearch();
         }
 
         return super.onOptionsItemSelected(item);
