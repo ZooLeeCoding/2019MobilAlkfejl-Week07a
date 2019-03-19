@@ -1,6 +1,7 @@
 package hu.szte.mobilalk.maf_02;
 
 import android.net.Uri;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -56,10 +57,19 @@ public class NetworkUtils {
         } catch(IOException e) {
             e.printStackTrace();
         } finally {
-
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-
-        return null;
+        Log.d(LOG_TAG, bookJSONString);
+        return bookJSONString;
     }
 
 }
